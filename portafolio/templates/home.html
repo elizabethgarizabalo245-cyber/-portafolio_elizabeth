@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row my-4 text-center">
+    <div class="col-md-4">
+       <img src="{% static 'portfolio/profile2.png' %}" class="img-fluid rounded-circle">
+    </div>
+
+    <div class="col-md-8">
+        <h1>Hola Soy Elizabeth</h1>
+        <h3>Aprendiz Sena</h3>
+        <p>
+            Soy aprendiz del SENA en formación como desarrolladora, apasionada por la tecnología y el desarrollo web.
+    Actualmente estoy adquiriendo experiencia en Python y Django, creando proyectos que me permiten fortalecer
+    mis habilidades en programación, diseño de interfaces y desarrollo de aplicaciones web.
+    
+    Me considero una persona comprometida, con muchas ganas de aprender y crecer profesionalmente en el mundo del desarrollo de software.
+        </p>
+
+        <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary" target="_blank">
+            Descargar CV
+        </a>
+    </div>
+</div>
+
+<hr>
+
+<h3 class="text-center">Mis Proyectos</h3>
+
+<div class="row">
+
+    {% for post in posts %}
+    <div class="col-md-4 p-2">
+        <div class="card shadow-lg">
+    
+        </div>
+            <img src="{{ post.image.url }}" class="card-img-top">
+            <div class="card-body">
+                <h5>{{ post.title }}</h5>
+                <p>{{ post.description|truncatechars:100 }}</p>
+
+                <a href="{% url 'post_detail' post.id %}" class="btn btn-light">
+                    Ver más
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

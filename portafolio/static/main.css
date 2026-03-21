@@ -1,0 +1,27 @@
+body {
+    background-color: #121212;
+    color: white;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: none;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #6c63ff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #5848d6;
+}
+
+img {
+    object-fit: cover;
+}

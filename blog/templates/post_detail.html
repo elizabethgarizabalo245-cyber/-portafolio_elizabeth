@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+<img src="{{ post.image.url }}" width="300">
+<p>{{ post.description }}</p>
+
+<a href="/" class="btn btn-light">Volver</a>
+
+{% endblock %}
