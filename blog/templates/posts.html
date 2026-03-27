@@ -1,17 +1,23 @@
 {% extends 'layout.html' %}
-{% load static %}
-
-{% block content %}
-
-<h1>Mis proyectos</h1>
+<div class="row">
 
 {% for post in posts %}
+<div class="col-md-4 mb-4">
 
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.description }}</p>
+  <div class="card bg-dark text-white h-100">
 
-    <img src="{{ post.image.url }}" width="300">
+    {% if post.image %}
+    <img src="{{ post.image.url }}" class="card-img-top">
+    {% endif %}
 
+    <div class="card-body">
+      <h5>{{ post.title }}</h5>
+      <p>{{ post.description|truncatechars:100 }}</p>
+    </div>
+
+  </div>
+
+</div>
 {% endfor %}
 
-{% endblock %}
+</div>
