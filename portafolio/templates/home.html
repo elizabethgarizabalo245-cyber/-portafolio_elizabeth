@@ -13,9 +13,9 @@
             text-align: center;
         }
 
-        h1 {
-            margin-top: 40px;
-            font-weight: bold;
+        .profile img {
+            border-radius: 50%;
+            margin-bottom: 15px;
         }
 
         .subtitle {
@@ -36,17 +36,12 @@
         }
 
         .card img {
-            height: 180px;
+            height: 200px;
             object-fit: cover;
         }
 
         .card-body {
             padding: 15px;
-        }
-
-        .card-title {
-            font-weight: bold;
-            margin-bottom: 10px;
         }
 
         .btn-custom {
@@ -63,7 +58,15 @@
 
 <body>
 
-    <h1>My Projects</h1>
+    <!-- PERFIL -->
+    <div class="profile mt-5">
+        <img src="https://via.placeholder.com/150" width="150">
+        <h2>Elizabeth Garizabalo</h2>
+        <p class="subtitle">Desarrolladora web 💻✨</p>
+    </div>
+
+    <!-- PROYECTOS -->
+    <h1 class="mt-4">My Projects</h1>
     <p class="subtitle">Mis trabajos y desarrollos recientes</p>
 
     <div class="container">
@@ -73,13 +76,13 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
 
-                    <img src="{{ project.image }}" alt="">
+                    <img src="{{ project.image }}">
 
                     <div class="card-body">
-                        <h5 class="card-title">{{ project.title }}</h5>
+                        <h5>{{ project.title }}</h5>
 
                         <a href="{{ project.url }}" target="_blank" class="btn btn-custom btn-sm">
-                            Ver más
+                            Ver más 🚀
                         </a>
                     </div>
 
