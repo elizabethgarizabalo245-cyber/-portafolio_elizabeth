@@ -1,8 +1,9 @@
-from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Project
 
-def crear_admin(request):
-    if not User.objects.filter(username='admin').exists():
-        User.objects.create_superuser('admin', 'admin@gmail.com', '1234')
-        return HttpResponse("Admin creado")
-    return HttpResponse("Ya existe")
+def home(request):
+    try:
+        projects = Project.objects.all()
+    except:
+        projects = []
+    return render(request, 'home.html', {'projects': projects})
