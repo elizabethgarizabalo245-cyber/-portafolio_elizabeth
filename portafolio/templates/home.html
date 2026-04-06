@@ -1,57 +1,94 @@
-{% extends 'layout.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Portafolio</title>
 
-{% block content %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="row my-4 text-center">
-    <div class="col-md-4">
-       <img src="{% static 'portfolio/profile2.png' %}" class="img-fluid rounded-circle">
-    </div>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            text-align: center;
+        }
 
-    <div class="col-md-8">
-        <h1>Hola Soy Elizabeth</h1>
-        <h3>Aprendiz Sena</h3>
-        <p>
-            Soy aprendiz del SENA en formación como desarrolladora, apasionada por la tecnología y el desarrollo web.
-    Actualmente estoy adquiriendo experiencia en Python y Django, creando proyectos que me permiten fortalecer
-    mis habilidades en programación, diseño de interfaces y desarrollo de aplicaciones web.
-    
-    Me considero una persona comprometida, con muchas ganas de aprender y crecer profesionalmente en el mundo del desarrollo de software.
-        </p>
+        h1 {
+            margin-top: 40px;
+            font-weight: bold;
+        }
 
-        <a href="{% static 'portfolio/cv.pdf' %}" class="btn btn-primary" target="_blank">
-            Descargar CV
-        </a>
-    </div>
-</div>
+        .subtitle {
+            color: #aaa;
+            margin-bottom: 40px;
+        }
 
-<hr>
+        .card {
+            background: #111;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
 
-<h3 class="text-center">Mis Proyectos</h3>
+        .card:hover {
+            transform: scale(1.05);
+        }
 
-<div class="row">
+        .card img {
+            height: 180px;
+            object-fit: cover;
+        }
 
-    {% for project in projects %}
-<div class="col-md-4 p-2">
-    <div class="card shadow-lg">
+        .card-body {
+            padding: 15px;
+        }
 
-        {% if project.image %}
-            <img src="{{ project.image.url }}" class="card-img-top">
-        {% endif %}
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-        <div class="card-body">
-            <h5>{{ project.title }}</h5>
-            <p>{{ project.description|truncatechars:100 }}</p>
+        .btn-custom {
+            background: #2563eb;
+            color: white;
+            border-radius: 20px;
+        }
 
-            <a href="#" class="btn btn-light">
-                Ver más
-            </a>
+        .btn-custom:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Projects</h1>
+    <p class="subtitle">Mis trabajos y desarrollos recientes</p>
+
+    <div class="container">
+        <div class="row justify-content-center">
+
+            {% for project in projects %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+
+                    <img src="{{ project.image }}" alt="">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+
+                        <a href="{{ project.url }}" target="_blank" class="btn btn-custom btn-sm">
+                            Ver más
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
-
     </div>
 
-{% endfor %}
-
-</div>
-
-{% endblock %}
+</body>
+</html>
