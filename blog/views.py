@@ -11,7 +11,7 @@ def home(request):
         {
             "title": "Frontend Proyecto",
             "description": "Aplicación frontend desarrollada con JavaScript.",
-            "image": "/static/img/Frontend Proyectos.png",
+            "image": "/static/img/Frontend Proyectos.jpg",
             "url": "https://github.com/elizabethgarizabalo245-cyber/frontend_proyecto"
         },
         {
