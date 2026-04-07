@@ -1,4 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -87,11 +89,16 @@
 
 <body>
 
+    <nav style="background:#020617; padding:15px;">
+    <h2 style="margin:0; color:white;">Mi Portafolio</h2>
+
+</nav>
+
 <div class="container">
 
     <!-- PERFIL -->
     <div class="hero">
-        <img src="https://via.placeholder.com/300" alt="perfil">
+        <img src="{% static 'img/profile.png' %}"> alt="perfil">
 
         <div class="hero-text">
             <h1>Hola, Soy Elizabeth</h1>
