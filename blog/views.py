@@ -2,12 +2,7 @@ from django.shortcuts import render
 
 def home(request):
     projects = [
-        {
-            "title": "Diseño de Servicios Web",
-            "description": "Proyecto en JavaScript enfocado en el diseño de servicios web.",
-            "image": "/static/img/Diseño de Servicios Web.png",
-            "url": "https://github.com/elizabethgarizabalo245-cyber/dise-o_serviciosweb"
-        },
+        
         {
             "title": "Frontend Proyecto",
             "description": "Aplicación frontend desarrollada con JavaScript.",
