@@ -27,10 +27,10 @@ def home(request):
             "url": "https://github.com/elizabethgarizabalo245-cyber/proyecto-web"
         },
         {
-            "title": "API Proyecto",
+            "title": "Proyecto Django",
             "description": "API desarrollada con Node.js y Express para evidencia académica.",
             "image": "/static/img/API Proyecto.png",
-            "url": "https://github.com/elizabethgarizabalo245-cyber/api-proyecto"
+            "url": "https://github.com/elizabethgarizabalo245-cyber/django-react-crud"
         }
     ]
 
